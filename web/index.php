@@ -1,29 +1,25 @@
 <?php
 
+// Статические свойства и методы 
 
 class Room
 {
-    // Public - публичное свойство, доступно везде в коде
-    public $color = 'красная';
+    // Статическое ствойство
 
-    // Private - приватное свойство, доступное только внутри класса
-    private $size = '40';
+    public static $color = 'Красная';
+
+    // Статический метод
+
+    public static function getColor()
+    {
+        echo "Привет, я комната";
+    }
     
-    //Protected - защищенное свойство, достопное только в дочерних (наследуемых) классах
-    protected $window = true;
-
-    public function getColor()
-    {
-        echo $this->color;
-    }
-
-    public function changeColor($newColor)
-    {
-        $this->color = $newColor;
-    }
-
 }
 
-// Создаем экземпляр класса
-$object = new Room();
+echo Room::$color;
+echo '<br>';
+Room::getColor();
+
+
 
